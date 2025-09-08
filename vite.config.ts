@@ -5,7 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base:
+    process.env.NODE_ENV === 'production'
+      ? '/mik-myp.github.io/' // 替换为你的仓库名
+      : '/',
   build: {
     outDir: 'dist',
     rollupOptions: {
